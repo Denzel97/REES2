@@ -3,11 +3,8 @@ from django.http import JsonResponse
 from django.core.mail import send_mail
 from .forms import CallbackForm
 
-
 def home(request):
-
     return render(request, 'index.html')
-
 
 def submit_callback_form(request):
     if request.method == 'POST':
