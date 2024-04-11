@@ -53,7 +53,7 @@ ROOT_URLCONF = 'rees_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'callback_app', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'callback_app/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,10 +112,13 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'callback_app', 'static'),
+    os.path.join(BASE_DIR, 'callback_app/static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'callback_app/static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -128,5 +131,5 @@ EMAIL_HOST = 'lon108.truehost.cloud'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'callback@reeskk.org'
 EMAIL_HOST_PASSWORD = 'CallBack@REES'
-# EMAIL_USE_TLS = True
+EMAIL_USE_TLS = True
 # DEFAULT_FROM_EMAIL = 'callback@reeskk.org'
